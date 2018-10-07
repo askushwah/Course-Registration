@@ -1,9 +1,18 @@
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
 body {
   font-family: Arial;
   font-size: 17px;
   padding: 0px;
+  display: flex;
+
 }
+body {
+  margin-top: 50px;
+  height: 800px;
+    background-color: aquamarine; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, aquamarine, white); /* Standard syntax (must be last) */
+	 }
 
 * {
   box-sizing: border-box;
@@ -11,7 +20,6 @@ body {
 
 #first {
     float: left;
-
 
 }
 #second {
@@ -38,6 +46,10 @@ body {
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
   margin: 0 -16px;
+  margin: auto;
+  margin-left: 100px;
+  margin-top: 50px;
+
 }
 
 .col-25 {
@@ -64,11 +76,15 @@ body {
 
 
 .container {
+
   background-color: #f2f2f2;
   padding: 0px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 3px;
   width: 45%;
+  filter:alpha(opacity=90);
+  -moz-opacity:.90;
+  opacity:.90
 
 }
 
@@ -78,6 +94,10 @@ body {
   border: 1px solid lightgrey;
   border-radius: 3px;
   width: 65%;
+  filter:alpha(opacity=90);
+  -moz-opacity:.90;
+  opacity:.90
+
 }
 
 
@@ -111,6 +131,7 @@ label {
   border-radius: 3px;
   cursor: pointer;
   font-size: 17px;
+
 }
 
 .btn:hover {
@@ -119,6 +140,7 @@ label {
 
 a {
   color: #2196F3;
+
 }
 
 hr {
@@ -132,10 +154,103 @@ span.price {
 
 
 @media (max-width: 800px) {
-  .row {
-    flex-direction: column-reverse;
+  body {
+    height: auto;
+      background-color: aquamarine; /* For browsers that do not support gradients */
+      background-image: linear-gradient(to bottom right, aquamarine, white); /* Standard syntax (must be last) */
+  	 }
+  #second {
+    width: 50%;
+    margin-left: auto;
   }
   .col-25 {
     margin-bottom: 20px;
+    margin: auto;
   }
+  .container{
+    width: 550px;
+    margin: auto;
+    }
+  .containerRight{
+      width: 550px;
+      margin: auto;
+    }
+    .row {
+      flex-direction: column;
+      margin: auto;
+      margin-top: 50px;
+
+    }
+
+
+}
+
+@media (max-width: 600px) {
+  body {
+      background-color: aquamarine; /* For browsers that do not support gradients */
+      background-image: linear-gradient(to bottom right, aquamarine, white); /* Standard syntax (must be last) */
+  	 }
+  .container{
+    width: 300px;
+    margin: auto;
+    }
+  .containerRight{
+      width: 300px;
+      margin: auto;
+    }
+    .row {
+      margin: auto;
+      margin-top: 50px;
+
+    }
+    #second {
+      width: 50%;
+      margin: auto;
+    }
+}
+
+
+.container-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+.container-flex .dock {
+  flex: 1 100%;
+  transition: flex 0.5s ease 0s;
+  overflow: hidden;
+}
+.container-flex .dock > * {
+  opacity: 1;
+  transition: opacity 0.5s ease 0.5s;
+}
+.container-flex .dock.dock-header {
+  order: 0;
+}
+.container-flex .dock.dock-left, .container-flex .dock.dock-right {
+  flex: 1 25%;
+}
+.container-flex .dock.dock-left {
+  order: 1;
+}
+.container-flex .dock.dock-center {
+  flex: 1 auto;
+  order: 2;
+}
+.container-flex .dock.dock-right {
+  order: 3;
+}
+.container-flex .dock.dock-footer {
+  order: 4;
+}
+.container-flex .dock.shrink {
+  flex: 0 1 0px;
+  transition: flex 0.5s ease 0s;
+}
+.container-flex .dock.shrink > * {
+  opacity: 0;
+  transition: opacity 0.5s ease 0s;
+}
+
+.container-flex > .dock > * {
+  margin: 5px;
 }

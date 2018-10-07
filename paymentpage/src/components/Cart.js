@@ -20,7 +20,7 @@ render(){
   </p>
 
   <p>
-   <br/> <Button bsStyle="info"> Print this transaction/reciept page </Button>  </p> <br/>
+   <br/> <Button onClick = {this.props.printFunction} bsStyle="info"> Print this transaction </Button>  </p> <br/>
   </form>
   );
 }

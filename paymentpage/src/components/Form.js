@@ -9,7 +9,7 @@ class Form extends React.Component{
     return(
   <form onSubmit = {this.props.submitFunction}  >
 
-
+<div class="wrapper">
   <h1> Payment </h1>
 <div id="firstTextFields">
     <p> <br/> <label htmlFor= "cardname"> Name on Card</label>
@@ -44,8 +44,15 @@ class Form extends React.Component{
   <p>Receipt will be emailed to the provided email address </p>
   {this.props.formSubmitted && <p> {this.props.formSubmitted} </p> }
   {this.props.error && <p> {this.props.error} </p> }
-    <p> <button> Submit </button>  </p>
+    <p>
+    <button> Submit</button></p>
+{/*
+     <Button onClick = {this.props.submitFunction} bsStyle="Success"> Submit </Button>  </p>
+*/}
     </div>
+
+    </div >
+
 
   </form>
 

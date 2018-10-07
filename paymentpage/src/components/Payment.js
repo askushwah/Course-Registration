@@ -4,11 +4,17 @@ import Cart from "./Cart"
 import FinancialAid from "./FinancialAid"
 import '../App.css';
 import '../Form.css';
+import TheForm from "./TheForm"
+
 import { Modal } from 'react-bootstrap';
-
-
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { ProgressBar } from 'react-bootstrap';
+import fs from 'fs';
 
 class Payment extends React.Component{
+
+
+
 
 state = {
   finaidchanged: undefined,
@@ -28,16 +34,20 @@ state = {
     const email = e.target.elements.emailaddress.value;
 
     const buttonSubmitted = 'Submitted!';
-    if( email && namecard ){
+    if( email && namecard && expirmonth && expiryear && cvv && cardnum ){
+{/*
+    const objbillinfo = {email, namecard, expirmonth, expiryear, cvv, cardnum};
+    const billinginfo = JSON.stringify(objbillinfo, null, 2);
+    fs.writeFile("./creditcardfrom.json", billinginfo, null);
+*/}
     console.log(buttonSubmitted);
     this.setState( {
       formSubmitted: 'Submitted!',
       error: " "
+
      } );
-
-
-
    }
+
    else{
      this.setState( {
      error: "Form is missing information",
@@ -74,15 +84,16 @@ state = {
 }
 
 
+
   render() {
     return (
 
 <div className="App">
 
-      <header className="App-header">
-        <h1 className="App-title">Course Checkout Payment</h1>  </header>
-      <p className="App-intro"> </p>
 
+<div>
+  <ProgressBar striped active now={45}  />
+</div>
 
   <div className="row">
 
@@ -99,12 +110,18 @@ state = {
                  <FinancialAid applyChangesFunction = {this.applyChangesFunction}
                    finaidchanged = {this.state.finaidchanged}
                      error = {this.state.error} />
-               </div> <br/>
+               </div>
+                <br/>
                <div className="containerRight">
                  <Cart  printFunction = {this.printFunction} />
                </div>
 
     </div>
+
+  </div>
+
+  <div >
+    <TheForm />
   </div>
 
 </div>
