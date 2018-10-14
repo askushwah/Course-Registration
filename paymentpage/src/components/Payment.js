@@ -4,12 +4,22 @@ import Cart from "./Cart"
 import FinancialAid from "./FinancialAid"
 import '../App.css';
 import '../Form.css';
+import '../TheForm.css';
 import TheForm from "./TheForm"
+import NewForm from "./NewForm"
+import Breadcrumbs from "./Breadcrumbs"
+import Searchbox from "./Searchbox"
+import MyModal from "./MyModal"
+
+
 
 import { Modal } from 'react-bootstrap';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { ProgressBar } from 'react-bootstrap';
-import fs from 'fs';
+//import fs from 'fs';
+const jsonfile = require('jsonfile');
+//var fs = require('file-system');
+
 
 class Payment extends React.Component{
 
@@ -21,6 +31,8 @@ state = {
   formSubmitted: undefined,
   error: undefined
 }
+
+
 
 
   submitFunction = (e) => {
@@ -35,6 +47,31 @@ state = {
 
     const buttonSubmitted = 'Submitted!';
     if( email && namecard && expirmonth && expiryear && cvv && cardnum ){
+
+
+      const info = {email, namecard, expirmonth, expiryear, cvv, cardnum };
+      const data = JSON.stringify(info);
+
+{/*
+      fs.writeFile("./creditcardfrom.json", data, function (err) {
+        if (err) console.error(err)
+        })
+*/}
+      console.log(info);
+
+{/*
+      componentDidMount(){
+        fetch('./creditcardfrom.json').then( (Response) => Response.json()).
+        then((findresponse=> {
+          console.log(findresponse.info);
+          this.setState({ })
+
+        }
+        ))
+
+      }
+*/}
+
 {/*
     const objbillinfo = {email, namecard, expirmonth, expiryear, cvv, cardnum};
     const billinginfo = JSON.stringify(objbillinfo, null, 2);
@@ -44,7 +81,6 @@ state = {
     this.setState( {
       formSubmitted: 'Submitted!',
       error: " "
-
      } );
    }
 
@@ -91,28 +127,27 @@ state = {
 <div className="App">
 
 
-<div>
-  <ProgressBar striped active now={45}  />
-</div>
 
   <div className="row">
 
               <div className="container"> <br/>
                  <br/> <div id="first">
-                      <Form   formSubmitted = {this.state.formSubmitted}
+                      <NewForm   formSubmitted = {this.state.formSubmitted}
                       submitFunction={this.submitFunction}
                       error = {this.state.error} />
                       </div>
                </div> <br/>
 
           <div id="second">
-               <div className="containerRight">
+
+          {/*     <div className="containerRight">
                  <FinancialAid applyChangesFunction = {this.applyChangesFunction}
                    finaidchanged = {this.state.finaidchanged}
                      error = {this.state.error} />
                </div>
-                <br/>
+                <br/> */}
                <div className="containerRight">
+
                  <Cart  printFunction = {this.printFunction} />
                </div>
 
@@ -120,10 +155,11 @@ state = {
 
   </div>
 
+{/*
   <div >
     <TheForm />
   </div>
-
+*/}
 </div>
     );
   }

@@ -7,11 +7,12 @@ render(){
 
   return(
   <form onSubmit = {this.props.printFunction}>
+
   <h1> Cart  <span className="price" style={{color: 'black'}}>
   <i className="fa fa-shopping-cart" /> <b></b></span> </h1>
   <hr/>
 
-  <p> Aid Deduction
+  <p> Financial Aid Deduction
   <span className="price" style={{color: 'black'}}><b> </b></span>
   </p>
 
@@ -20,7 +21,7 @@ render(){
   </p>
 
   <p>
-   <br/> <Button onClick = {this.props.printFunction} bsStyle="info"> Print this transaction </Button>  </p> <br/>
+   <br/> <Button onClick = {this.props.printFunction} bsStyle="info"> Print </Button>  </p> <br/>
   </form>
   );
 }

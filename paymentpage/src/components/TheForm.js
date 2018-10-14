@@ -1,5 +1,10 @@
 import React from "react";
 import '../Form.css';
+import '../TheForm.css';
+import NewForm from "./NewForm"
+import Cart from "./Cart"
+
+
 
 class TheForm extends React.Component{
 render(){
@@ -10,33 +15,16 @@ render(){
         <div class="dock dock-left">
             <div class="container-fluid">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Panel Heading Left</div>
-                    <div class="panel-body">Panel Body Left</div>
+                    <div class="panel-heading"><h1>Payment</h1></div>
+                    <div class="panel-body">  <NewForm /> </div>
                 </div>
             </div>
         </div>
-        <div class="dock dock-center">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">Panel Heading Center 1</div>
-                            <div class="panel-body">Panel Body Center 1</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Simple Flex Container</h1>
-                    <p> </p>
-                </div>
-            </div>
-        </div>
+
         <div class="dock dock-right">
             <div class="container-fluid">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Panel Heading Right</div>
+                    <div class="panel-heading"> <Cart/> </div>
                     <div class="panel-body">Panel Body Right</div>
                 </div>
             </div>

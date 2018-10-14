@@ -1,16 +1,17 @@
 import React from "react";
 import '../Form.css';
 import { Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 
 //const Form = props =>(
 class Form extends React.Component{
   render(){
     return(
-  <form onSubmit = {this.props.submitFunction}  >
-
-<div class="wrapper">
+  <form onSubmit = {this.props.submitFunction}   >
   <h1> Payment </h1>
+
+<div className="wrapper">
 <div id="firstTextFields">
     <p> <br/> <label htmlFor= "cardname"> Name on Card</label>
   <input type = "text" id="cardname" name="nameoncard" placeholder= "Name on Card..."/> </p>
@@ -39,19 +40,25 @@ class Form extends React.Component{
 <div id="second">
     <p>  <label htmlFor= "emailadd"> Email Address</label>
   <input type = "text" id="emailadd" name="emailaddress" placeholder= "jimmy@iu.edu"/> </p><br/>
+
+
   </div>
-  <div id="first">
-  <p>Receipt will be emailed to the provided email address </p>
-  {this.props.formSubmitted && <p> {this.props.formSubmitted} </p> }
-  {this.props.error && <p> {this.props.error} </p> }
-    <p>
-    <button> Submit</button></p>
+
+
+
 {/*
      <Button onClick = {this.props.submitFunction} bsStyle="Success"> Submit </Button>  </p>
 */}
-    </div>
 
     </div >
+
+
+    {this.props.formSubmitted && <p> {this.props.formSubmitted} </p> }
+    {this.props.error && <p> {this.props.error} </p> }
+    <div class="form-actions">
+
+        <button type="submit" class="btn" >  Submit   </button>
+    </div>
 
 
   </form>

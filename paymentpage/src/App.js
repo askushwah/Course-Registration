@@ -1,27 +1,42 @@
 import React from "react";
 import './App.css';
+import './Form.css';
+import './Searchbox.css';
+
 import Payment from "./components/Payment"
-import Navigationbar from "./components/Navigationbar"
+import ReviewPage from "./components/ReviewPage"
+import Sidebar from "./components/Sidebar"
+import Breadcrumbs from "./components/Breadcrumbs"
+
+import Searchbox from "./components/Searchbox"
+
 
 //import 'react-bootstrap/lib';
 //import { Modal } from 'react-bootstrap';
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Route, browserHistory,  Switch} from "react-router-dom";
+
 
 class App extends React.Component{
 
 
   render() {
     return (
+
       <BrowserRouter>
       <div>
-      <Navigationbar/>
+      <Searchbox/>
+      <Breadcrumbs/>
       <Switch>
-
       <Route path="/payment" component={Payment} exact />
+      <Route path="/reviewcourses" component={ReviewPage} exact />
+
+
       </Switch>
       </div>
       </BrowserRouter>
-    //  <Payment/ >
+
+
+
     );
   }
 }

@@ -8,7 +8,6 @@ body {
 
 }
 body {
-  margin-top: 50px;
   height: 800px;
     background-color: aquamarine; /* For browsers that do not support gradients */
     background-image: linear-gradient(to bottom right, aquamarine, white); /* Standard syntax (must be last) */
@@ -19,24 +18,35 @@ body {
 }
 
 #first {
-    float: left;
+    margin-left: 0px;
+    height: 60%;
+
 
 }
 #second {
   float: right;
-  width: 50%;
+  width: 45%;
+  margin-left: 0px;
+  margin-right: -100px;
+
+  height: 60%;
+
 
 }
 
 #firstTextFields {
-    float: left;
-    width: 45%;
+    width: auto;
+    margin-left: 0px;
+    height: 60%;
+
 
 
 }
 #secondTextFields {
   float: right;
-  width: 50%;
+  width: auto;
+  height: 60%;
+
 
 }
 
@@ -49,6 +59,7 @@ body {
   margin: auto;
   margin-left: 100px;
   margin-top: 50px;
+
 
 }
 
@@ -76,15 +87,19 @@ body {
 
 
 .container {
+margin-top: -4.5%;
+margin-left: -130px;
+height: 60%;
 
   background-color: #f2f2f2;
   padding: 0px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 3px;
-  width: 45%;
+  width: 70%;
+  height: 60%;
   filter:alpha(opacity=90);
   -moz-opacity:.90;
-  opacity:.90
+  opacity:.90;
 
 }
 
@@ -96,7 +111,12 @@ body {
   width: 65%;
   filter:alpha(opacity=90);
   -moz-opacity:.90;
-  opacity:.90
+  opacity:.90;
+  margin-right: 100px;
+  margin-left: -10px;
+  margin-top: -10%;
+
+
 
 }
 
@@ -127,15 +147,19 @@ label {
   padding: 12px;
   margin: 10px 0;
   border: none;
-  width: 100%;
+  width: 60%;
   border-radius: 3px;
   cursor: pointer;
   font-size: 17px;
+  margin: 0 auto;
+
 
 }
 
 .btn:hover {
   background-color: #45a049;
+  margin: 0 auto;
+
 }
 
 a {
@@ -160,8 +184,8 @@ span.price {
       background-image: linear-gradient(to bottom right, aquamarine, white); /* Standard syntax (must be last) */
   	 }
   #second {
-    width: 50%;
-    margin-left: auto;
+    width: auto;
+
   }
   .col-25 {
     margin-bottom: 20px;
@@ -169,11 +193,20 @@ span.price {
   }
   .container{
     width: 550px;
+    width: 65%;
+
     margin: auto;
+    margin-left: 20%;
+    height: 60%;
     }
   .containerRight{
       width: 550px;
+      width: 55%;
+
       margin: auto;
+      margin-left: 17%;
+      height: 60%;
+
     }
     .row {
       flex-direction: column;
@@ -190,67 +223,29 @@ span.price {
       background-color: aquamarine; /* For browsers that do not support gradients */
       background-image: linear-gradient(to bottom right, aquamarine, white); /* Standard syntax (must be last) */
   	 }
+     #second {
+       width: auto;
+
+     }
   .container{
     width: 300px;
+    width: 55%;
     margin: auto;
+    height: 60%;
+
     }
   .containerRight{
       width: 300px;
+      width: 55%;
+
       margin: auto;
+      margin-left: 17%;
+
+      height: 60%;
+
     }
     .row {
       margin: auto;
-      margin-top: 50px;
-
     }
-    #second {
-      width: 50%;
-      margin: auto;
-    }
-}
 
-
-.container-flex {
-  display: flex;
-  flex-flow: row wrap;
-}
-.container-flex .dock {
-  flex: 1 100%;
-  transition: flex 0.5s ease 0s;
-  overflow: hidden;
-}
-.container-flex .dock > * {
-  opacity: 1;
-  transition: opacity 0.5s ease 0.5s;
-}
-.container-flex .dock.dock-header {
-  order: 0;
-}
-.container-flex .dock.dock-left, .container-flex .dock.dock-right {
-  flex: 1 25%;
-}
-.container-flex .dock.dock-left {
-  order: 1;
-}
-.container-flex .dock.dock-center {
-  flex: 1 auto;
-  order: 2;
-}
-.container-flex .dock.dock-right {
-  order: 3;
-}
-.container-flex .dock.dock-footer {
-  order: 4;
-}
-.container-flex .dock.shrink {
-  flex: 0 1 0px;
-  transition: flex 0.5s ease 0s;
-}
-.container-flex .dock.shrink > * {
-  opacity: 0;
-  transition: opacity 0.5s ease 0s;
-}
-
-.container-flex > .dock > * {
-  margin: 5px;
 }
